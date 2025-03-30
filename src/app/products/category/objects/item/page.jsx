@@ -56,7 +56,7 @@ export default function Item() {
 
       {/* Title */}
       <div className="md:mx-12 mx-3">
-        <h1 className="text-5xl font-bold my-4">{getField('product_name')}</h1>
+        <h1 className="text-5xl font-bold my-4">{currentProduct.product_name}</h1>
         <p className="text-gray-500">{getField('product_codes')} | {familyName}</p>
       </div>
 
@@ -64,7 +64,7 @@ export default function Item() {
       <div className="flex flex-col items-center justify-center w-full">
         <div className="flex flex-col md:flex-row lg:gap-6 gap-6 mt-6 md:px-10 px-0 justify-center items-center">
           <img
-            src='/assets/products/sample_bulb.png'
+            src={currentProduct.product_image}
             alt="Dazzle Light"
             className="md:w-96 w-80 aspect-square rounded-2xl border-2 border-black"
           />
