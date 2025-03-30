@@ -61,14 +61,14 @@ function ObjectsContent() {
         <h2 className="text-xl font-semibold mb-2">Mounting type</h2>
         {['Ceiling recessed', 'Recessed Suspended', 'Surface Mounted', 'Suspended', 'Surface Suspended Recessed'].map((item) => (
           <label key={item} className="block text-gray-700">
-            <input type="checkbox" className="mr-2" /> {item}
+            <input type="radio" className="mr-2" /> {item}
           </label>
         ))}
 
         <h2 className="text-xl font-semibold mt-6 mb-2">Light Distribution</h2>
         {['A10-A32 wide 100% direct', 'A40-A44 medium 100% direct', 'A50-A80 narrow 100% direct', 'B41-B63 narrow direct'].map((item) => (
           <label key={item} className="block text-gray-700">
-            <input type="checkbox" className="mr-2" /> {item}
+            <input type="radio" className="mr-2" /> {item}
           </label>
         ))}
       </motion.aside>
@@ -78,7 +78,13 @@ function ObjectsContent() {
         <h2 className="text-xl font-semibold mb-2">Mounting type</h2>
         {['Ceiling recessed', 'Recessed Suspended', 'Surface Mounted', 'Suspended', 'Surface Suspended Recessed'].map((item) => (
           <label key={item} className="block text-gray-700">
-            <input type="checkbox" className="mr-2" /> {item}
+            <input type="radio" className="mr-2" /> {item}
+          </label>
+        ))}
+         <h2 className="text-xl font-semibold mt-6 mb-2">Light Distribution</h2>
+        {['A10-A32 wide 100% direct', 'A40-A44 medium 100% direct', 'A50-A80 narrow 100% direct', 'B41-B63 narrow direct'].map((item) => (
+          <label key={item} className="block text-gray-700">
+            <input type="radio" className="mr-2" /> {item}
           </label>
         ))}
       </aside>

@@ -9,14 +9,11 @@ import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 
 
-
-
 export default function Category() {
   const [filters, setFilters] = useState({});
   const [showFilters, setShowFilters] = useState(false);
   const [categoryName, setCategoryName] = useState('Loading...');
   const [lightingProducts, setLightingProducts] = useState([]);
-
 
   const searchParams = useSearchParams();
   const category_id = searchParams.get('category_id');
@@ -92,7 +89,7 @@ export default function Category() {
         {['Ceiling recessed', 'Recessed Suspended', 'Surface Mounted', 'Suspended', 'Surface Suspended Recessed'].map((item) => (
           <label key={item} className="block text-gray-700 mb-2">
             <input
-              type="checkbox"
+              type="radio"
               onChange={() => handleFilterChange('mountingType', item)}
               className="mr-2"
             /> {item}
@@ -103,7 +100,7 @@ export default function Category() {
         {['A10-A32 wide 100% direct', 'A40-A44 medium 100% direct', 'A50-A80 narrow 100% direct', 'B41-B63 narrow direct'].map((item) => (
           <label key={item} className="block text-gray-700 mb-2">
             <input
-              type="checkbox"
+              type="radio"
               onChange={() => handleFilterChange('lightDistribution', item)}
               className="mr-2"
             /> {item}
@@ -114,7 +111,7 @@ export default function Category() {
         {['LED', 'CONLGB'].map((item) => (
           <label key={item} className="block text-gray-700 mb-2">
             <input
-              type="checkbox"
+              type="radio"
               onChange={() => handleFilterChange('lampType', item)}
               className="mr-2"
             /> {item}
@@ -128,7 +125,7 @@ export default function Category() {
         {['Ceiling recessed', 'Recessed Suspended', 'Surface Mounted', 'Suspended', 'Surface Suspended Recessed'].map((item) => (
           <label key={item} className="block text-gray-700">
             <input
-              type="checkbox"
+              type="radio"
               onChange={() => handleFilterChange('mountingType', item)}
               className="mr-2"
             /> {item}
@@ -139,7 +136,7 @@ export default function Category() {
         {['A10-A32 wide 100% direct', 'A40-A44 medium 100% direct', 'A50-A80 narrow 100% direct', 'B41-B63 narrow direct'].map((item) => (
           <label key={item} className="block text-gray-700">
             <input
-              type="checkbox"
+              type="radio"
               onChange={() => handleFilterChange('lightDistribution', item)}
               className="mr-2"
             /> {item}
@@ -150,7 +147,7 @@ export default function Category() {
         {['LED', 'CONLGB'].map((item) => (
           <label key={item} className="block text-gray-700">
             <input
-              type="checkbox"
+              type="radio"
               onChange={() => handleFilterChange('lampType', item)}
               className="mr-2"
             /> {item}

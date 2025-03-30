@@ -69,12 +69,12 @@ export default function Item() {
             className="md:w-96 w-80 aspect-square rounded-2xl border-2 border-black"
           />
           <img
-            src='/assets/products/sample_bulb_cutout.png'
+            src={currentProduct.product_technical_drawing}
             alt="Cutout Diagram"
             className="md:w-96 w-80 aspect-square rounded-2xl border-2 border-black"
           />
           <img
-            src='/assets/products/sample_bulb_watt.png'
+            src={currentProduct.product_light_distribution}
             alt="Cutout Diagram"
             className="md:h-96 w-full lg:w-auto rounded-2xl border-2 border-black"
           />
