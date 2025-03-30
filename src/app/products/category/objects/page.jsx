@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { FiFilter } from 'react-icons/fi';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
 
-export default function Objects() {
+function ObjectsContent() {
   const [filters, setFilters] = useState({});
   const [showFilters, setShowFilters] = useState(false);
   const [lightingProducts, setLightingProducts] = useState([]);
@@ -33,8 +33,6 @@ export default function Objects() {
 
   // Filter products based on product_family and family_id
   const filteredProducts = lightingProducts.filter(product => product.product_family == family_id);
-
-
 
   const toggleFilters = () => setShowFilters(prev => !prev);
 
@@ -73,33 +71,12 @@ export default function Objects() {
             <input type="checkbox" className="mr-2" /> {item}
           </label>
         ))}
-
-        <h2 className="text-xl font-semibold mt-6 mb-2">Lamp Type</h2>
-        {['LED', 'CONLGB'].map((item) => (
-          <label key={item} className="block text-gray-700">
-            <input type="checkbox" className="mr-2" /> {item}
-          </label>
-        ))}
       </motion.aside>
 
       {/* Desktop Filters Sidebar */}
       <aside className="hidden lg:block w-full md:w-72 p-4 mt-12 lg:ml-16">
         <h2 className="text-xl font-semibold mb-2">Mounting type</h2>
         {['Ceiling recessed', 'Recessed Suspended', 'Surface Mounted', 'Suspended', 'Surface Suspended Recessed'].map((item) => (
-          <label key={item} className="block text-gray-700">
-            <input type="checkbox" className="mr-2" /> {item}
-          </label>
-        ))}
-
-        <h2 className="text-xl font-semibold mt-6 mb-2">Light Distribution</h2>
-        {['A10-A32 wide 100% direct', 'A40-A44 medium 100% direct', 'A50-A80 narrow 100% direct', 'B41-B63 narrow direct'].map((item) => (
-          <label key={item} className="block text-gray-700">
-            <input type="checkbox" className="mr-2" /> {item}
-          </label>
-        ))}
-
-        <h2 className="text-xl font-semibold mt-6 mb-2">Lamp Type</h2>
-        {['LED', 'CONLGB'].map((item) => (
           <label key={item} className="block text-gray-700">
             <input type="checkbox" className="mr-2" /> {item}
           </label>
@@ -131,5 +108,13 @@ export default function Objects() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function Objects() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ObjectsContent />
+    </Suspense>
   );
 }

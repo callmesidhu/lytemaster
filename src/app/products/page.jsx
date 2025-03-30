@@ -36,7 +36,11 @@ export default function ProductsPage() {
   }, []);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (<div>
+      <div className="flex items-center justify-center absolute inset-0">
+      Error: {error}
+      </div>
+      </div>);
   }
 
 if (products.length === 0) {
